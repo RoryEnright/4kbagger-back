@@ -3,7 +3,7 @@ class CreateMountains < ActiveRecord::Migration[5.0]
     create_table :mountains do |t|
       t.text :name
       t.integer :height
-      t.references :hike, foreign_key: true
+      # t.references :hike, foreign_key: true
 
       t.timestamps
     end
