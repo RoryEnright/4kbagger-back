@@ -23,3 +23,18 @@ Hard code trail options with set mileage and total elevation
 
 
 3 resources: Users --< Hikes >-- Mountains
+
+hike:
+when:date
+trail:string
+duration:integer
+note:text
+
+app/controllers/hikes_controller.rb
+app/models/hike.rb
+app/serializers/hike_serializer.rb
+db/migrate/20170717185031_create_hikes.rb
+spec/controllers/hikes_controller_spec.rb
+spec/models/hike_spec.rb
+spec/requests/hikes_spec.rb
+spec/routing/hikes_routing_spec.rb
