@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170717190847) do
+ActiveRecord::Schema.define(version: 20170718140918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,8 +28,12 @@ ActiveRecord::Schema.define(version: 20170717190847) do
     t.string   "trail"
     t.integer  "duration"
     t.text     "note"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+    t.integer  "mountain_id"
+    t.index ["mountain_id"], name: "index_hikes_on_mountain_id", using: :btree
+    t.index ["user_id"], name: "index_hikes_on_user_id", using: :btree
   end
 
   create_table "mountains", force: :cascade do |t|
@@ -50,4 +54,6 @@ ActiveRecord::Schema.define(version: 20170717190847) do
   end
 
   add_foreign_key "examples", "users"
+  add_foreign_key "hikes", "mountains"
+  add_foreign_key "hikes", "users"
 end
