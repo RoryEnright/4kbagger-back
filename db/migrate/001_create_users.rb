@@ -5,7 +5,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email, null: false, index: { unique: true }
       t.string :token, null: false, index: { unique: true }
       t.string :password_digest, null: false
-      t.references :hike, foreign_key: true
 
       t.timestamps null: false
     end
