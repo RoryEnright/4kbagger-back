@@ -46,6 +46,6 @@ class MountainsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def mountain_params
-      params.require(:mountain).permit(:name, :height, :user_id, :hike_id)
+      params.require(:mountain).permit(:name, :height)
     end
 end

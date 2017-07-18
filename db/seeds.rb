@@ -8,3 +8,19 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# require 'csv'
+#
+# csv_text = File.read(Rails.root.join('db', '4KBagger.csv'))
+# csv = CSV.parse(csv_text, :headers => true)
+# csv.each do |row|
+#   Mountain.create!(row.to_hash)
+# end
+
+require 'csv'
+
+csv_text = File.read('4KBagger.csv')
+csv = CSV.parse(csv_text, :headers => true)
+csv.each do |row|
+  Mountain.create!(row.to_hash)
+end
