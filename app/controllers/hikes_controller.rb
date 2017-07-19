@@ -1,4 +1,4 @@
-class HikesController < ApplicationController
+class HikesController < OpenReadController
   before_action :set_hike, only: [:show, :update, :destroy]
 
   # GET /hikes
@@ -10,12 +10,12 @@ class HikesController < ApplicationController
 
   # GET /hikes/1
   def show
-    render json: @hike
+    render json: Hike.find(params[:id])
   end
 
   # POST /hikes
   def create
-    @hike = Hike.new(hike_params)
+    @hike = current_user.hikes.build(hike_params)
 
     if @hike.save
       render json: @hike, status: :created, location: @hike
@@ -46,6 +46,6 @@ class HikesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def hike_params
-      params.require(:hike).permit(:when, :trail, :duration, :note)
+      params.require(:hike).permit(:when, :trail, :duration, :note, :mountain_id)
     end
 end

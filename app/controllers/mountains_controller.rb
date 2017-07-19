@@ -1,4 +1,4 @@
-class MountainsController < ApplicationController
+class MountainsController < OpenReadController
   before_action :set_mountain, only: [:show, :update, :destroy]
 
   # GET /mountains
