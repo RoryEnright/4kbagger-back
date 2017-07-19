@@ -44,7 +44,7 @@ class HikesController < OpenReadController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_hike
-    @hike = current_user.hikes.find(params[:id])
+    @hike = Hike.find(params[:id])
   end
 
   # Only allow a trusted parameter "white list" through.
