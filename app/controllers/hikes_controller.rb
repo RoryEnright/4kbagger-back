@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class HikesController < OpenReadController
   before_action :set_hike, only: [:show, :update, :destroy]
 
@@ -24,10 +25,11 @@ class HikesController < OpenReadController
     end
   end
 
-  # PATCH/PUT /hikes/1
+  # PATCH/PUT /rhikes/1
   def update
     if @hike.update(hike_params)
-      render json: @hike
+      head :no_content
+      # render json: @hike
     else
       render json: @hike.errors, status: :unprocessable_entity
     end
@@ -36,16 +38,19 @@ class HikesController < OpenReadController
   # DELETE /hikes/1
   def destroy
     @hike.destroy
+
+    head :no_content
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_hike
-      @hike = Hike.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_hike
+    @hike = current_user.hikes.find(params[:id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def hike_params
-      params.require(:hike).permit(:when, :trail, :duration, :note, :mountain_id)
-    end
+  # Only allow a trusted parameter "white list" through.
+  def hike_params
+    params.require(:hike).permit(:when, :trail, :duration, :note, :mountain_id)
+  end
+
+  private :set_hike, :hike_params
 end

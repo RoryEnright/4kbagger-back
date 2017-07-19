@@ -6,15 +6,15 @@ curl "${API}${URL_PATH}" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \
-  --header "Authorization: Token token=BAhJIiUyOTJlNTAxM2M2ZWQxZTQ1MDFkMGNiYTZiMDE1NmE2MwY6BkVG--a39de567a724b29c6fd5c00a60f6f23b79c977db" \
+  --header "Authorization: Token token=BAhJIiViYzc2MDYzZWExMjNiMDFkYzNmMWQ5ZTgzMDI4ZmVkMwY6BkVG--8ffe5fec8234e6c99e2fcacf887d0b5ead34e546" \
   --data '{
     "hike": {
-      "when": "2016-21-07",
-      "trail": "Falling Waters",
-      "duration": "3.5",
-      "note": "Amazing water falls!",
+      "when": "2016-05-07",
+      "trail": "Falls",
+      "duration": "2",
+      "note": "Test Test!",
       "user_id": "1",
-      "mountain_id": "24"
+      "mountain_id": "10"
     }
   }'
 
