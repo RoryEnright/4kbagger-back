@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20170718140918) do
   end
 
   create_table "hikes", force: :cascade do |t|
-    t.date     "when"
+    t.string   "when"
     t.string   "trail"
     t.integer  "duration"
     t.text     "note"
