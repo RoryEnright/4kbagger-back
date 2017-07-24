@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
-  resources :mountains
+  resources :mountains, only: [:index, :show]
   resources :hikes
   resources :examples, except: [:new, :edit]
   post '/sign-up' => 'users#signup'

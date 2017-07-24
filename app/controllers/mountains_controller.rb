@@ -43,7 +43,7 @@ class MountainsController < OpenReadController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_mountain
-    @mountain = Mountain.find(params[:id])
+    @mountain = current_user.mountains.find(params[:id])
   end
 
   # Only allow a trusted parameter "white list" through.

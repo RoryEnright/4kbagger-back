@@ -6,7 +6,7 @@ curl "${API}${URL_PATH}" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \
-  --header "Authorization: Token token=BAhJIiU1ZTljMjIxODllNWIzNDBmNzM4MTdmZGQ4YmMyOTkwMgY6BkVG--9cf03fd6727da23de0c9b735e2823d9aed212348" \
+  --header "Authorization: Token token=BAhJIiVjZjVmN2FmMDZjYmM5M2MxYjAyZmI4MmQ1MzliMDlkNgY6BkVG--374ebd41c4f8b4a0c1027ab943cead7437e4ff8a" \
   --data '{
     "hike": {
       "when": "2016-05-07",
